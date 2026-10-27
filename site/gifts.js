@@ -1,4 +1,4 @@
-/* [투두투] gifts.js · 2026-10-26 · 원본 apps/page/사이트코드/사은품표.html · 고치려면 원본에서 · 이 파일 직접 수정 금지 */
+/* [투두투] gifts.js · 2026-10-27 · 원본 apps/page/사이트코드/사은품표.html · 고치려면 원본에서 · 이 파일 직접 수정 금지 */
 window.TD_GIFTS = {
   updated: '2026-10-19',
   tool: { 106:'sheets', 89:'sheets', 6:'sheets', 120:'sheets', 101:'sheets', 118:'sheets', 149:'notion', 154:'notion', 163:'notion' },
