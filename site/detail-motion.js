@@ -13,6 +13,13 @@
 		}
 		if(el.getAttribute('data-m')==='draw'&&el.getTotalLength){el.style.setProperty('--tdm-len',Math.ceil(el.getTotalLength()));}
 		if(el.getAttribute('data-m')==='count')el.textContent='0'+(el.getAttribute('data-suffix')||'');
+		if(el.getAttribute('data-m')==='circle'&&!el.firstChild){
+			var NS='http://www.w3.org/2000/svg',sv=document.createElementNS(NS,'svg'),pa=document.createElementNS(NS,'path');
+			sv.setAttribute('viewBox','0 0 200 80');sv.setAttribute('preserveAspectRatio','none');sv.setAttribute('aria-hidden','true');sv.style.cssText='display:block;width:100%;height:100%;overflow:visible;';
+			pa.setAttribute('d',el.getAttribute('data-d')||'M30 44 C 22 14, 120 2, 176 22 C 206 34, 186 70, 112 74 C 46 78, 10 62, 22 38 C 30 22, 70 12, 120 12');
+			pa.setAttribute('fill','none');pa.setAttribute('stroke',el.getAttribute('data-color')||'#FF3B30');pa.setAttribute('stroke-width',el.getAttribute('data-w')||'3');pa.setAttribute('stroke-linecap','round');
+			sv.appendChild(pa);el.appendChild(sv);var L=Math.ceil(pa.getTotalLength())||600;pa.style.strokeDasharray=L;pa.style.strokeDashoffset=L;pa.style.transition='stroke-dashoffset 1.1s cubic-bezier(.6,0,.3,1)';el.__tdmPath=pa;
+		}
 		el.setAttribute('data-tdm','1');
 	}
 	function play(el){
@@ -21,6 +28,7 @@
 		if(m==='type'){var cs=el.querySelectorAll('.tdm-c'),sp=+el.getAttribute('data-speed')||45;[].forEach.call(cs,function(c,i){setTimeout(function(){c.classList.add('tdm-on');},i*sp);});return cs.length*sp+150;}
 		if(m==='count'){var to=parseFloat(el.getAttribute('data-to')),dec=(String(to).split('.')[1]||'').length,suf=el.getAttribute('data-suffix')||'',t0=performance.now(),D=1100;
 			var iv=setInterval(function(){var k=Math.min(1,(performance.now()-t0)/D),e=1-Math.pow(1-k,3);el.textContent=(k>=1?to.toFixed(dec):(to*e).toFixed(dec))+suf;if(k>=1)clearInterval(iv);},33);return 500;}
+		if(m==='circle'&&el.__tdmPath){el.__tdmPath.style.strokeDashoffset=0;return 900;}
 		return {draw:900,mark:650,pop:320,up:300,toggle:900,fill:750,stamp:380}[m]||300;
 	}
 	var Q=[];
