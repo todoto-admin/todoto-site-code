@@ -13,7 +13,8 @@
 		}
 		if(el.getAttribute('data-m')==='draw'&&el.getTotalLength){el.style.setProperty('--tdm-len',Math.ceil(el.getTotalLength()));}
 		if(el.getAttribute('data-m')==='count')el.textContent='0'+(el.getAttribute('data-suffix')||'');
-		if(el.getAttribute('data-m')==='circle'&&!el.firstChild){
+		if(el.getAttribute('data-m')==='circle'&&!el.querySelector('svg')){
+			el.textContent='';
 			var NS='http://www.w3.org/2000/svg',sv=document.createElementNS(NS,'svg'),pa=document.createElementNS(NS,'path');
 			sv.setAttribute('viewBox','0 0 200 80');sv.setAttribute('preserveAspectRatio','none');sv.setAttribute('aria-hidden','true');sv.style.cssText='display:block;width:100%;height:100%;overflow:visible;';
 			pa.setAttribute('d',el.getAttribute('data-d')||'M30 44 C 22 14, 120 2, 176 22 C 206 34, 186 70, 112 74 C 46 78, 10 62, 22 38 C 30 22, 70 12, 120 12');
