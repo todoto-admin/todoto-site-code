@@ -66,7 +66,7 @@
     id: 'ai_worker_1',
     title: '3시간 뒤 첫 AI 직원이 출근합니다',
     titleMo: '첫 AI 직원 뽑으세요',
-    sub: '11월 5일(목) 강남역 오프라인 워크숍',
+    sub: '11월 5일(목) 오프라인 워크숍',
     link: '/aigrowcompany-class',
     cta: '지금 신청하기',
     ctaMo: '신청하기',
