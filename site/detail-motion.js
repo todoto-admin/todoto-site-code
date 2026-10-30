@@ -27,7 +27,7 @@
 		el.classList.add('tdm-on');
 		var m=el.getAttribute('data-m');
 		if(m==='type'){var cs=el.querySelectorAll('.tdm-c'),sp=+el.getAttribute('data-speed')||45;[].forEach.call(cs,function(c,i){setTimeout(function(){c.classList.add('tdm-on');},i*sp);});return cs.length*sp+150;}
-		if(m==='count'){var to=parseFloat(el.getAttribute('data-to')),dec=(String(to).split('.')[1]||'').length,suf=el.getAttribute('data-suffix')||'',t0=performance.now(),D=1100;
+		if(m==='count'){var to=parseFloat(el.getAttribute('data-to')),dec=((el.getAttribute('data-to')||'').split('.')[1]||'').length,suf=el.getAttribute('data-suffix')||'',t0=performance.now(),D=1100;
 			var iv=setInterval(function(){var k=Math.min(1,(performance.now()-t0)/D),e=1-Math.pow(1-k,3);el.textContent=(k>=1?to.toFixed(dec):(to*e).toFixed(dec))+suf;if(k>=1)clearInterval(iv);},33);return 500;}
 		if(m==='circle'&&el.__tdmPath){el.__tdmPath.style.strokeDashoffset=0;return 900;}
 		return {draw:900,mark:650,pop:320,up:300,toggle:900,fill:750,stamp:380}[m]||300;
