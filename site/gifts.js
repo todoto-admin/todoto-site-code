@@ -1,4 +1,5 @@
 /* [투두투] gifts.js · 2026-11-03 · 원본 apps/page/사이트코드/사은품표.html · 고치려면 원본에서 · 이 파일 직접 수정 금지 */
+(function(){if(document.getElementById("td-gifts"))return;var s=document.createElement('style');s.id="td-gifts";s.textContent="@media (min-width:767px) and (max-width:1024px){body:not(.video_fullpage):not(.admin) ._widget_data > :is(.ls,.mm,.mr,.mn,.mh,.mc,.ma,.cws,.ai1,.cfh,.xl,.xh,.xc,.xf,.xb,.ab,.bd,.bg,.am,.wt,.qa,.rv,.gd),body:not(.video_fullpage):not(.admin) .todoto-v2-block > .cd-outer{width:calc(100vw / .85) !important;margin-left:calc(-50vw / .85) !important;}}";(document.head||document.documentElement).appendChild(s);})();
 window.TD_GIFTS = {
   updated: '2026-10-27',
   tool: { 106:'sheets', 89:'sheets', 6:'sheets', 120:'sheets', 101:'sheets', 118:'sheets', 149:'notion', 154:'notion', 163:'notion' },
@@ -10,6 +11,7 @@ window.TD_GIFTS = {
     106: [ { name:'경조사 관리 시트', cond:'후기를 남기면 받아요' } ]
   }
 };
+
 window.TD_WELCOME = {
   on: true,
   pct: '10% 할인', name: '신규회원 웰컴 쿠폰', join: '/site_join_pattern_choice', page: '/welcome',
