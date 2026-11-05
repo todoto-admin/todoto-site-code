@@ -81,11 +81,12 @@
   try { if (+localStorage.getItem(KEY) > Date.now()) return; } catch (e) {}
   var pad = function(n){ return (n < 10 ? '0' : '') + n; };
   var dayKST = function(t){ var k = new Date(t + 9 * 3600e3); return Date.UTC(k.getUTCFullYear(), k.getUTCMonth(), k.getUTCDate()); };
+  var OPEN = TB.openAt ? new Date(TB.openAt).getTime() : 0;
   var left = function(){
-    var now = Date.now(), d = Math.round((dayKST(END) - dayKST(now)) / 864e5);
-    if (d > 0) return 'D-' + d;
-    var s = Math.max(0, Math.floor((END - now) / 1000));
-    return '마감까지 ' + pad(Math.floor(s / 3600)) + ':' + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60);
+    var now = Date.now(), pre = now < OPEN, T = pre ? OPEN : END, d = Math.round((dayKST(T) - dayKST(now)) / 864e5);
+    if (d > 0) return (pre ? '오픈 D-' : 'D-') + d;
+    var s = Math.max(0, Math.floor((T - now) / 1000));
+    return (pre ? '오픈까지 ' : '마감까지 ') + pad(Math.floor(s / 3600)) + ':' + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60);
   };
   var put = function(){
     if (!document.body || document.querySelector('.tdtb')) return;
