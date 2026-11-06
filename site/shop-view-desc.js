@@ -67,7 +67,7 @@
     title: '광고 AI 직원 채용 2회차가 열려요',
     titleMo: '광고 AI 직원 2회차',
     sub: '11월 26일(목) 오프라인 워크숍',
-    link: '/ai-class2-ad?notify=2',
+    link: '/ai-class2-ad',
     cta: '알림 신청하기',
     ctaMo: '알림 신청',
     openAt: '2026-11-10T10:00:00+09:00',
