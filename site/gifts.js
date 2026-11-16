@@ -14,7 +14,7 @@ window.TD_GIFTS = {
 
 window.TD_SETUP = {
   start: '2026-11-16T16:25:00+09:00', end: '2026-11-30T23:59:59+09:00',
-  title: '2027 SETUP', sub: '1만원 쿠폰 · 2만원 이상 구매 시', go: '쿠폰 받기', url: '/2027setup',
+  title: '2027 1만원 쿠폰', sub: '2만원 이상 구매 시 · 11.30까지', go: '쿠폰 받기', url: '/2027setup?from=detail_box',
   except: [161, 165, 166, 140, 141, 142, 143, 144, 145, 147, 150, 151, 152, 153, 159, 160, 162]
 };
 window.TD_WELCOME = {
@@ -32,3 +32,13 @@ window.TD_WELCOME = {
     cls: { h: '투두투 가입하고<br><b>클래스 알림</b> 가장 먼저 받아 가세요', p: '가입하면 무료 템플릿 4종도 바로 받을 수 있어요', go: '가입하고 알림받기 ↗' }
   }
 };
+
+(function(){
+  var S = window.TD_SETUP, W = window.TD_WELCOME, t = Date.now(); if (!S || !W) return;
+  S.live = /[?&]tdsetup=1/.test(location.search) || (t >= +new Date(S.start) && t <= +new Date(S.end));
+  if (!S.live) return;
+  W.cap = '가입하면 <strong>무료 템플릿 4종</strong>을 바로 받아요';
+  W.box.h = '가입하면 바로<br><b>무료 템플릿 4종</b>'; W.box.sheet = '회원이면 0원';
+  W.swap = W.swap.map(function(r){ return r[1] === '10% 할인 쿠폰' ? [r[0], '2027 1만원 쿠폰'] : r; });
+  W.toast = { em: '2027 SETUP', strong: '1만원 쿠폰', t: '2027 1만원 쿠폰을<br>받아 가세요 🎁', go: '쿠폰 받으러 가기', href: '/2027setup?from=join_toast' };
+})();
