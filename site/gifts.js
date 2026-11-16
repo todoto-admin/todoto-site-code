@@ -12,6 +12,11 @@ window.TD_GIFTS = {
   }
 };
 
+window.TD_SETUP = {
+  start: '2026-11-16T16:25:00+09:00', end: '2026-11-30T23:59:59+09:00',
+  title: '2027 SETUP', sub: '1만원 쿠폰 · 2만원 이상 구매 시', go: '쿠폰 받기', url: '/2027setup',
+  except: [161, 165, 166, 140, 141, 142, 143, 144, 145, 147, 150, 151, 152, 153, 159, 160, 162]
+};
 window.TD_WELCOME = {
   on: true,
   pct: '10% 할인', name: '신규회원 웰컴 쿠폰', join: '/site_join_pattern_choice', page: '/welcome',
