@@ -40,5 +40,6 @@ window.TD_WELCOME = {
   W.cap = '가입하면 <strong>무료 템플릿 4종</strong>을 바로 받아요';
   W.box.h = '가입하면 바로<br><b>무료 템플릿 4종</b>'; W.box.sheet = '회원이면 0원';
   W.swap = W.swap.map(function(r){ return r[1] === '10% 할인 쿠폰' ? [r[0], '2027 1만원 쿠폰'] : r; });
+  W.login = { s: '2027 SETUP', pct: '1만원 쿠폰', cap: '가입하고 <strong>2027 1만원 쿠폰</strong>과<br><strong>무료 템플릿 4종</strong>을 받아 가세요', more: '쿠폰 보러 가기', href: '/2027setup?from=login' };
   W.toast = { em: '2027 SETUP', strong: '1만원 쿠폰', t: '2027 1만원 쿠폰을<br>받아 가세요 🎁', go: '쿠폰 받으러 가기', href: '/2027setup?from=join_toast' };
 })();

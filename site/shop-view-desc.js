@@ -199,7 +199,11 @@
       a.style.setProperty('background', '#000CFE', 'important'); a.style.setProperty('border-radius', '999px', 'important'); a.style.setProperty('color', '#fff', 'important');
     });
   };
-  var so = function(){ boxes(); swapText(document.body); var cap = document.querySelector('.td-cap'); if (cap && /플래너/.test(cap.textContent)) cap.innerHTML = W.cap; [].forEach.call(document.querySelectorAll('a[href*="promo_2025"]'), function(a){ a.href = a.href.replace(/\/promo_2025/, W.page); }); };
+  var loginBox = function(){ var L = W.login, w = document.getElementById('tdWelcome'); if (!L || !w || w.getAttribute('data-tds')) return;
+    [].forEach.call(w.querySelectorAll('.td-s'), function(e){ e.textContent = L.s; }); [].forEach.call(w.querySelectorAll('.td-pct'), function(e){ e.textContent = L.pct; e.style.letterSpacing = '-.05em'; e.style.whiteSpace = 'nowrap'; });
+    var cp = w.querySelector('.td-cap'); if (cp) cp.innerHTML = L.cap; var mr = w.querySelector('.td-more'); if (mr) { mr.textContent = L.more; mr.href = L.href; }
+    w.setAttribute('data-tds', '1'); };
+  var so = function(){ loginBox(); boxes(); swapText(document.body); var cap = document.querySelector('.td-cap'); if (cap && /플래너/.test(cap.textContent)) cap.innerHTML = W.cap; [].forEach.call(document.querySelectorAll('a[href*="promo_2025"]'), function(a){ a.href = a.href.replace(/\/promo_2025/, W.page); }); };
   so(); var sn = 0, si = setInterval(function(){ so(); if (++sn > 20) clearInterval(si); }, 500);
   if ('MutationObserver' in window) { var st = null; new MutationObserver(function(){ clearTimeout(st); st = setTimeout(so, 150); }).observe(document.documentElement, { childList:true, subtree:true }); }
   var joined = /[?&]tdjoin=1/.test(location.search); try { if (localStorage.getItem('td_joined')) { joined = true; localStorage.removeItem('td_joined'); } } catch (e) {}
