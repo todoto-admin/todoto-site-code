@@ -192,7 +192,7 @@
       var t = h.textContent;
       if (/만다라트 템플릿/.test(t)) { if (p) p.textContent = B.sheet; }
       else if (s.classList.contains('cws-join')) { h.innerHTML = B.cls.h; if (p) p.textContent = B.cls.p; a.textContent = B.cls.go; }
-      else if (/만다라트 플래너/.test(t)) { h.innerHTML = B.h; if (p) p.textContent = B.p; a.textContent = B.go; a.href = W.page + '?from=join_' + (location.pathname.replace(/^\/+|\/+$/g, '') || 'main'); }
+      else if (/만다라트 플래너/.test(t)) { h.innerHTML = B.h; if (p) p.textContent = B.p; a.textContent = B.go; a.href = (B.href || W.page) + '?from=join_' + (location.pathname.replace(/^\/+|\/+$/g, '') || 'main'); }
       else return;
       s.setAttribute('data-tdw', '1');
       if (p) p.style.setProperty('color', '#111', 'important');
