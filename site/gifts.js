@@ -1,5 +1,5 @@
-/* [투두투] gifts.js · 2026-11-16 · 원본 apps/page/사이트코드/사은품표.html · 고치려면 원본에서 · 이 파일 직접 수정 금지 */
-(function(){if(document.getElementById("td-gifts"))return;var s=document.createElement('style');s.id="td-gifts";s.textContent="@media (min-width:767px) and (max-width:1024px){body:not(.video_fullpage):not(.admin) ._widget_data > :is(.ls,.mm,.mr,.mn,.mh,.mc,.ma,.cws,.ai1,.cfh,.xl,.xh,.xc,.xf,.xb,.ab,.bd,.bg,.am,.wt,.qa,.rv,.gd),body:not(.video_fullpage):not(.admin) .todoto-v2-block > .cd-outer{width:calc(100vw / .85) !important;margin-left:calc(-50vw / .85) !important;}}";(document.head||document.documentElement).appendChild(s);})();
+/* [투두투] gifts.js · 2026-11-23 · 원본 apps/page/사이트코드/사은품표.html · 고치려면 원본에서 · 이 파일 직접 수정 금지 */
+(function(){if(document.getElementById("td-gifts"))return;var s=document.createElement('style');s.id="td-gifts";s.textContent="@media (max-width:767px){#mobile_carousel_menu_0.mobile_nav_depth{display:flex !important;justify-content:space-between !important;padding:0 14px !important;overflow-x:auto}#mobile_carousel_menu_0>.nav-item{margin:0 !important;padding:0 !important;flex:none}#mobile_carousel_menu_0>.nav-item>a{padding-left:0 !important;padding-right:0 !important}}\r\n@media (min-width:767px) and (max-width:1024px){body:not(.video_fullpage):not(.admin) ._widget_data > :is(.ls,.mm,.mr,.mn,.mh,.mc,.ma,.cws,.ai1,.cfh,.xl,.xh,.xc,.xf,.xb,.ab,.bd,.bg,.am,.wt,.qa,.rv,.gd),body:not(.video_fullpage):not(.admin) .todoto-v2-block > .cd-outer{width:calc(100vw / .85) !important;margin-left:calc(-50vw / .85) !important;}}";(document.head||document.documentElement).appendChild(s);})();
 window.TD_GIFTS = {
   updated: '2026-11-04',
   tool: { 106:'sheets', 89:'sheets', 6:'sheets', 120:'sheets', 101:'sheets', 118:'sheets', 95:'sheets', 97:'sheets', 149:'notion', 154:'notion', 163:'notion' },
@@ -11,6 +11,7 @@ window.TD_GIFTS = {
     106: [ { name:'경조사 관리 시트', cond:'후기를 남기면 받아요' } ]
   }
 };
+
 
 window.TD_SETUP = {
   start: '2026-11-16T16:25:00+09:00', end: '2026-11-30T23:59:59+09:00',
